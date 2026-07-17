@@ -3,6 +3,7 @@ package runners;
 import java.util.Scanner;
 
 import model.Pet;
+import systems.HealthSystem;
 
 public class DeveloperRunner {
 	public static void main(String[] args) {
@@ -32,9 +33,13 @@ public class DeveloperRunner {
 				System.out.println("Feeding feature coming soon!");
 			else if (choice == 3)
 				System.out.println("Sleeping feature coming soon!");
-			else if (choice == 4)
-				//idk yet but do smth
-				System.out.println("do something!!!");
+			else if (choice == 4) {
+				pet.changeHunger(-5);
+				pet.changeEnergy(-3);
+				HealthSystem.updateHealth(pet);
+				System.out.println("One hour has passed!");
+				System.out.println(pet);
+			}
 			else if (choice>4 || choice<0)
 				System.out.println("I think you entered the number wrong. Wanna try again? :)");
 		}

@@ -88,6 +88,7 @@ public class Pet {
 		changeHappiness(food.getHappinessEffect());
 		changeWeight(food.getWeightChange());
 		changeCoins(-food.getFoodCost());
+		changeEnergy(food.getEnergyEffect());
 	}
 	
 	}

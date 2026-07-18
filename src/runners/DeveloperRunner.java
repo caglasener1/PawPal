@@ -30,11 +30,13 @@ public class DeveloperRunner {
 
 					Choice:""");
 			choice = oku.nextInt();
-			if (choice == 1)
+			switch (choice) {
+			case 1:
 				System.out.println(pet);
-			
-			else if (choice == 2) {
-				int foodChoice = -1;
+				break;
+				
+			case 2:
+				int foodChoice;
 				System.out.println("\n========== Food Choices ==========\n\n");
 				for(int i = 0; i < FoodDatabase.FOODS.length; i++) {
 					System.out.println( (i+1) + ". " + FoodDatabase.FOODS[i].getFoodName());	} 
@@ -46,27 +48,34 @@ public class DeveloperRunner {
 					System.out.println(pet);
 				}
 				else if(foodChoice == 0) {
-					// back to main menu
+					continue;
 				}
 				else {
 					System.out.println("Oops, wrong number! Try again.");
 				}	
-			}
-			
-			else if (choice == 3)
+				break;
+				
+			case 3: 
 				System.out.println("Sleeping feature coming soon!");
-			
-			else if (choice == 4) {
+				break;
+				
+			case 4:
 				pet.changeHunger(-5);
 				pet.changeEnergy(-3);
 				HealthSystem.updateHealth(pet);
 				System.out.println("One hour has passed!");
 				System.out.println(pet);
-			}
-			
-			else 
+				break;
+				
+			case 0:
+				break;
+				
+			default:
 				System.out.println("I think you entered the number wrong. Wanna try again? :)");
-		}
+			
+			} //switch ends here
+				
+		} //while ends here
 		System.out.println("Thank you for playing PawPal!");
 		oku.close();
 	}

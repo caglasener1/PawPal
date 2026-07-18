@@ -8,14 +8,16 @@ public class Food {
 	private int happinessEffect;	
 	private int weightChange;
 	private int cost;
+	private int energyEffect;
 	
-	public Food(String n,int hu,int he,int ha,int w,int c) {
+	public Food(String n,int hu,int he,int ha,int w,int c, int en) {
 		this.name = n;
 		this.hungerRestore = hu;
 		this.healthEffect = he;
 		this.happinessEffect = ha;
 		this.weightChange = w;
 		this.cost = c;
+		this.energyEffect = en;
 	}
 	
 	public String getFoodName() {
@@ -40,5 +42,9 @@ public class Food {
 	
 	public int getFoodCost() {
 		return cost;
+	}
+	
+	public int getEnergyEffect() {
+		return energyEffect;
 	}
 }

@@ -69,7 +69,7 @@ public class Pet {
 	}
 	public void changeCoins(int amount) {
 		coins += amount;
-		coins = Math.max(0,age);
+		coins = Math.max(0,coins);
 	}
 	public boolean isIdealWeight() {
 		return weight == IDEAL_WEIGHT;
@@ -81,4 +81,13 @@ public class Pet {
 				+ "\nWeight: " + weight + "\nHappiness: " + happiness 
 				+ "\nEnergy: " + energy + "\nAge: " + age + "\nCoins: " + coins;
 		}
+	
+	public void feed(Food food) {
+		changeHunger(food.getHungerRestore());
+		changeHealth(food.getHealthEffect());
+		changeHappiness(food.getHappinessEffect());
+		changeWeight(food.getWeightChange());
+		changeCoins(-food.getFoodCost());
+	}
+	
 	}

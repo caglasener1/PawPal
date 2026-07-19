@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import model.Pet;
 import systems.HealthSystem;
+import systems.TimeSystem;
 import database.FoodDatabase;
 
 public class DeveloperRunner {
@@ -60,9 +61,7 @@ public class DeveloperRunner {
 				break;
 				
 			case 4:
-				pet.changeHunger(-5);
-				pet.changeEnergy(-3);
-				HealthSystem.updateHealth(pet);
+				TimeSystem.passHour(pet, 1);
 				System.out.println("One hour has passed!");
 				System.out.println(pet);
 				break;

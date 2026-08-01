@@ -8,7 +8,7 @@ public class Pet {
 	private int weight;		//1-10 underweight to overweight
 	private int happiness;	//0-100 higher is happier
 	private int energy;		//0-100 higher is more energic
-	private int age;		//days
+	private int age;		//hours
 	private int coins;		//0+ game currency
 	
 	public static final int MAX_STAT = 100;
@@ -42,6 +42,7 @@ public class Pet {
 		return age;	}
 	public int getCoins() {
 		return coins;	}
+
 	
 	public void changeHealth(int amount) {
 		health += amount;
@@ -74,12 +75,15 @@ public class Pet {
 	public boolean isIdealWeight() {
 		return weight == IDEAL_WEIGHT;
 	}
+	public String displayAge() {
+		return age/24 + " days, " + age%24 + " hours";
+	}
 	
 	@Override
 	public String toString() {
 		return "Name: " + name + "\nHealth: " + health + "\nHunger: " + hunger 
 				+ "\nWeight: " + weight + "\nHappiness: " + happiness 
-				+ "\nEnergy: " + energy + "\nAge: " + age + "\nCoins: " + coins;
+				+ "\nEnergy: " + energy + "\nAge: " + displayAge() + "\nCoins: " + coins;
 		}
 	
 	public void feed(Food food) {
@@ -91,4 +95,6 @@ public class Pet {
 		changeEnergy(food.getEnergyEffect());
 	}
 	
-	}
+
+	
+}

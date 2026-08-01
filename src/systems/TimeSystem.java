@@ -9,6 +9,7 @@ public class TimeSystem {
 			pet.changeHunger(-5);
 			pet.changeEnergy(-3);
 			HealthSystem.updateHealth(pet);
+			pet.changeAge(1);
 		}
 	}
 

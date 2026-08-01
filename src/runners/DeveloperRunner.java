@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import model.Pet;
 import systems.HealthSystem;
+import systems.SleepSystem;
 import systems.TimeSystem;
 import database.FoodDatabase;
 
@@ -57,7 +58,14 @@ public class DeveloperRunner {
 				break;
 				
 			case 3: 
-				System.out.println("Sleeping feature coming soon!");
+				System.out.println("How many hours should the pet sleep?\nHours:");
+				int sleepHour = oku.nextInt();
+				if (sleepHour > 0 && sleepHour <= 12) {
+					SleepSystem.sleep(pet, sleepHour);
+					System.out.println(name + " has slept for " + sleepHour + " hours.");
+				}
+				else
+					System.out.println("Please choose between 1 to 12 hours");
 				break;
 				
 			case 4:

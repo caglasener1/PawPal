@@ -26,6 +26,18 @@ public class Pet {
 		this.coins = 0;
 	}
 	
+	public Pet(String name, int health, int hunger, int weight, int happiness, int energy, int age, int coins) {
+		this.name = name;
+		this.hunger = hunger;
+		this.weight = weight;
+		this.health = health;
+		this.happiness = happiness;
+		this.energy = energy;
+		this.age = age;
+		this.coins = coins;
+	}
+
+	
 	public String getName() {
 		return name;	}
 	public int getHealth() {

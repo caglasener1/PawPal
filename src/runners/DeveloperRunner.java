@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import model.Pet;
 import systems.HealthSystem;
+import systems.SaveSystem;
 import systems.SleepSystem;
 import systems.TimeSystem;
 import database.FoodDatabase;
@@ -28,6 +29,7 @@ public class DeveloperRunner {
 					2. Feed
 					3. Sleep
 					4. Wait One Hour
+					5. Save
 					0. Exit
 
 					Choice:""");
@@ -72,6 +74,10 @@ public class DeveloperRunner {
 				TimeSystem.passHour(pet, 1);
 				System.out.println("One hour has passed!");
 				System.out.println(pet);
+				break;
+				
+			case 5:
+				SaveSystem.save(pet);
 				break;
 				
 			case 0:

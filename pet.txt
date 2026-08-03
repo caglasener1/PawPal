@@ -1,0 +1,8 @@
+Name:Coco
+Health:99
+Hunger:95
+Happiness:100
+Energy:97
+Weight:7
+Age:1
+Coins:0

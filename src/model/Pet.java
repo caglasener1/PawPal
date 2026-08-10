@@ -26,7 +26,7 @@ public class Pet {
 		this.coins = 0;
 	}
 	
-	public Pet(String name, int health, int hunger, int weight, int happiness, int energy, int age, int coins) {
+	public Pet(String name, int health, int hunger, int happiness, int energy, int weight, int age, int coins) {
 		this.name = name;
 		this.hunger = hunger;
 		this.weight = weight;

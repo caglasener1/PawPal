@@ -15,10 +15,17 @@ public class DeveloperRunner {
 
 		Scanner oku = new Scanner(System.in);
 		System.out.println("Welcome to PawPal\n");
-		System.out.println("What would you like to name your pet?\n> ");
-		String name = oku.nextLine();
-		Pet pet = new Pet(name);
-		System.out.println("\nYour pet has been created\n");
+		Pet pet;
+		if(SaveSystem.hasSave()) {
+			pet = SaveSystem.load();
+			System.out.println("Welcome back " + pet.getName() + "!");
+		}
+		else {
+			System.out.println("What would you like to name your pet?\n> ");
+			String name = oku.nextLine();
+			pet = new Pet(name);
+			System.out.println("\nYour pet has been created\n");
+		}
 		System.out.println(pet);
 		int choice = -1;
 		while (choice != 0) {
@@ -64,7 +71,7 @@ public class DeveloperRunner {
 				int sleepHour = oku.nextInt();
 				if (sleepHour > 0 && sleepHour <= 12) {
 					SleepSystem.sleep(pet, sleepHour);
-					System.out.println(name + " has slept for " + sleepHour + " hours.");
+					System.out.println(pet.getName() + " has slept for " + sleepHour + " hours.");
 				}
 				else
 					System.out.println("Please choose between 1 to 12 hours");

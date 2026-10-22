@@ -9,13 +9,15 @@ The project started as an AP Computer Science A assignment and has since evolved
 - Console-based menu
 - View pet status
 - Object-oriented design
+- Save/load system
 
-## Planned Features
+## Features in Development
 - Feeding system
 - Sleeping system
 - Health system
+
+## Planned Features
 - Time progression
-- Save/load system
 - Achievements
 - GUI
 - Mobile application
